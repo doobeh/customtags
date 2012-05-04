@@ -13,11 +13,6 @@ from tempfile import NamedTemporaryFile
 app = Flask(__name__)
 app.config.from_object('config')
 
-db = SQLAlchemy(app)
-
-
-
-
 def generatePdf(description,upc,pages):
     tmpFile = NamedTemporaryFile(delete=False).name
     c=canvas.Canvas(tmpFile,pagesize=letter)
