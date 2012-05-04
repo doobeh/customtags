@@ -31,3 +31,8 @@ hard-coded.
 * Form validation, at present the upc gets cropped to 12 digits, even if the
 user enters more, and the description has no length checks.  This can cause
 at best formatting errors, at worst a failure to generate any tags.
+
+* Tweak the generation loop, at current it always causes a blank page to be
+generated at the end of the PDF.
+
+* If an UPC8 is entered, automatically expand it to UPC-A -> EAN13.
