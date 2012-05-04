@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Custom Tag Generator</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Generate Tags">
+    <meta name="author" content="Anthony Plunkett">
+
+    <link href="/static/bootstrap/css/bootstrap.css" rel="stylesheet" type="text/css">
+    <style type="text/css">
+        body {
+            padding-top: 60px;
+            padding-bottom: 40px;
+        }
+    </style>
+
+    <!-- Le HTML5 shim, for IE6-8 support of HTML5 elements -->
+    <!--[if lt IE 9]>
+    <script src="//html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+</head>
+
+<body>
+
+<div class="navbar navbar-fixed-top">
+    <div class="navbar-inner">
+        <div class="container">
+
+            <a class="brand" href="#">Custom Tag Generator</a>
+            <div class="nav-collapse">
+                <ul class="nav">
+                    <li class="active"><a href="#">Home</a></li>
+                </ul>
+            </div><!--/.nav-collapse -->
+        </div>
+    </div>
+</div>
+
+<div class="container">
+
+    <!-- Main hero unit for a primary marketing message or call to action -->
+    <div class="row">
+        <div class="span8 offset2">
+            <h3>Create Tags</h3>
+            <p>Enter product details below.  When you generate the tags and print them, remember to set
+            scaling to 'none'.</p>
+                <form class="form-horizontal well" method="post" action="#">
+                    <fieldset>
+
+                        <div class="control-group">
+                            <label class="control-label" for="input01">Product Name</label>
+                            <div class="controls">
+                                <input type="text" name="description" class="input-xlarge" id="input01" placeholder="Enter Name Here...">
+                            </div>
+                        </div>
+
+                        <div class="control-group">
+                            <label class="control-label" for="input01">UPC Number</label>
+                            <div class="controls">
+                                <input type="text" name="upc" class="input-xlarge" id="input01" placeholder="0000000000000">
+                            </div>
+                        </div>
+
+                        <div class="control-group">
+                            <label class="control-label" for="select01">Pages to print</label>
+                            <div class="controls">
+                                <select name="pages" id="select01">
+                                    <option value="1">1</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                    <option value="4">4</option>
+                                    <option value="5">5</option>
+                                    <option value="6">6</option>
+                                    <option value="7">7</option>
+                                    <option value="8">8</option>
+                                    <option value="9">9</option>
+                                    <option value="10">10</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="form-actions">
+                            <button type="submit" class="btn btn-primary">Create Tags</button>
+                        </div>
+                    </fieldset>
+                </form>
+            </span>
+    </div>
+</div> <!-- /container -->
+
+<!-- Le javascript
+================================================== -->
+<!-- Placed at the end of the document so the pages load faster -->
+<script src="/static/bootstrap/js/jquery.js"></script>
+<script src="/static/bootstrap/js/bootstrap-transition.js"></script>
+<script src="/static/bootstrap/js/bootstrap-alert.js"></script>
+<script src="/static/bootstrap/js/bootstrap-modal.js"></script>
+<script src="/static/bootstrap/js/bootstrap-dropdown.js"></script>
+<script src="/static/bootstrap/js/bootstrap-scrollspy.js"></script>
+<script src="/static/bootstrap/js/bootstrap-tab.js"></script>
+<script src="/static/bootstrap/js/bootstrap-tooltip.js"></script>
+<script src="/static/bootstrap/js/bootstrap-popover.js"></script>
+<script src="/static/bootstrap/js/bootstrap-button.js"></script>
+<script src="/static/bootstrap/js/bootstrap-collapse.js"></script>
+<script src="/static/bootstrap/js/bootstrap-carousel.js"></script>
+<script src="/static/bootstrap/js/bootstrap-typeahead.js"></script>
+
+</body>
+</html>
+
+
+
+
+

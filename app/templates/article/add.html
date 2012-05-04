@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+{% from "forms/macros.html" import bs_field %}
+{% block content %}
+    <form method="POST" action="." class="well form-inline">
+        {{ form.csrf_token }}
+        {{ bs_field(form.title, class="input text") }}
+        {{ bs_field(form.content, class="input text") }}
+        {{ bs_field(form.url, class="input text") }}
+        <input type="submit" value="Add" class="btn btn-primary">
+        <a href="{{ url_for('admin.manage') }}" class="btn">Cancel</a>
+    </form>
+
+
+{% endblock %}

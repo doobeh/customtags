@@ -1,0 +1,65 @@
+{% macro render_field(field) %}
+<div class="form_field">
+    {{ field.label(class="label") }}
+    {% if field.errors %}
+    {% set css_class = 'has_error ' + kwargs.pop('class', '') %}
+    {{ field(class=css_class, **kwargs) }}
+    <ul class="errors">{% for error in field.errors %}<li>{{ error|e }}</li>{% endfor %}</ul>
+    {% else %}
+    {{ field(**kwargs) }}
+    {% endif %}
+</div>
+{% endmacro %}
+
+
+{%  macro bs_field(field,help=False,icon=False,counter=False) %}
+
+    <div class="control-group{% if field.errors %} warning{% endif %}">
+        {% if field.type in ('EmailField','PasswordField','TextField','TextAreaField','FileField','QuerySelectFieldCustom','DecimalField','SelectField') %}
+            {{  field.label(class="control-label") }}
+            <div class="controls">
+                {% if icon %}
+                    <div class="input-prepend">
+                    <span class="add-on"><i class="{{ icon }}"></i></span>
+                {%  endif %}
+                {{  field(**kwargs)|safe }}
+                {% if icon %}</div>{% endif %}
+
+                {# Show Errors #}
+                {% if field.errors %}
+                    <p class="help-block">
+                        {%- for error in field.errors %}<i class="icon-star"></i> {{ error }}<br/>{% endfor -%}
+                    </p>
+                {% endif %}
+
+
+                {%  if help or counter%}
+                    <p class="help-block">{{ help|safe }}{% if counter %} <span class="counter-display"></span> characters left. {% endif %}</p>
+                {% endif %}
+            </div>
+
+        {% elif field.type in ('RadioField') %}
+            {{  field.label(class="control-label") }}
+            <div class="controls">
+
+                {% for subfield in field %}
+                    <label class="radio">
+                        {{ subfield(**kwargs)|safe }}
+                        {{ subfield.label.text }}
+                    </label>
+                {%  endfor %}
+                {%  if help %}
+                    {% if field.errors %}
+                        <p class="help-block">
+                            {%- for error in field.errors %}<i class="icon-star"></i> {{ error }}{% endfor -%}
+                        </p>
+                    {% endif %}
+                    <p class="help-block">{{ help }}</p>
+                {% endif %}
+            </div>
+        {% else %}
+            <h1>{{  field }}</h1>
+        {% endif %}
+    </div>
+
+{%  endmacro %}
