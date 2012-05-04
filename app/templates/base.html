@@ -42,6 +42,7 @@
     <!-- Main hero unit for a primary marketing message or call to action -->
     <div class="row">
         <div class="span8 offset2">
+            {% block content %}
             <h3>Create Tags</h3>
             <p>Enter product details below.  When you generate the tags and print them, remember to set
             scaling to 'none'.</p>
@@ -86,6 +87,7 @@
                     </fieldset>
                 </form>
             </span>
+            {% endblock content %}
     </div>
 </div> <!-- /container -->
 
